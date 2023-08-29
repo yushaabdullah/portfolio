@@ -1,3 +1,85 @@
+@import "../../global.scss";
+
 .intro {
-    background-color: beige;
+    background-color: $offWhiteColor;
+    display: flex;
+
+
+    .left{
+        flex: 0.5;
+        overflow: hidden;
+        
+
+        .imageContainer{
+            width:100%;
+            height: 80%;
+            margin-top: 9%;
+            background-color: $crimsonColor;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 1s ease;
+
+            &.active{
+                background-color: $mainColor;
+            }
+
+            img{
+                height: 70%;
+                border-radius: 0 0 10% 40%;
+            }
+        }
+    }
+
+    .right{
+        flex: 0.5;
+        position: relative;
+
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            padding-left: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+            h1{
+                font-size: 60px;
+                margin: 10px 0;
+            }
+
+            h2{
+                font-size: 35px;
+            }
+
+            h3{
+                font-size: 30px;
+            }
+        }
+
+        a{
+            position: absolute;
+            bottom: 20px;
+            left: 40%;
+
+            .arrow{
+                font-size: 100px;
+                color: $mainColor;
+                opacity: 1;
+                animation: arrowBlink 3s infinite;
+            }
+
+            @keyframes arrowBlink {
+                0%, 100% {
+                    opacity: 1;
+                  }
+                  50% {
+                    opacity: 0;
+                  }
+            }
+        }
+
+    }
 }
